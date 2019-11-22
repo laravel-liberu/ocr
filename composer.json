@@ -1,0 +1,30 @@
+{
+	"name": "laravel-enso/ocr",
+	"description": "A wrapper to work with ocrmypdf inside PHP.",
+	"version": "0.1.0",
+	"type": "library",
+	"keywords": ["laravel-enso", "ocrmypdf", "OCR", "text recognition"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Adrian Ocneanu",
+			"email": "aocneanu@gmail.com",
+			"homepage": "https://laravel-enso.com",
+			"role": "Developer"
+		},
+		{
+			"name": "Reza Fouladi",
+			"email": "raftx24@gmail.com",
+			"homepage": "https://laravel-enso.com",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": "^5.4 || ^7.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"LaravelEnso\\Ocr\\": "src/"
+		}
+	}
+}
