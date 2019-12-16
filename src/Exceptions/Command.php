@@ -4,7 +4,7 @@ namespace LaravelEnso\Ocr\Exceptions;
 
 use Exception;
 
-class CommandException extends Exception
+class Command extends Exception
 {
     public static function notFound($result)
     {
