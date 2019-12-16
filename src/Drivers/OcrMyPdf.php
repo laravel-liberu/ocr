@@ -2,7 +2,7 @@
 
 namespace LaravelEnso\Ocr\Drivers;
 
-use LaravelEnso\Ocr\Exceptions\CommandException;
+use LaravelEnso\Ocr\Exceptions\Command as Exception;
 
 class OcrMyPdf
 {
@@ -25,7 +25,7 @@ class OcrMyPdf
         exec($command, $result, $exitCode);
 
         if ($exitCode !== 0) {
-            throw CommandException::notFound($result);
+            throw Exception::notFound($result);
         }
 
         return $this;
@@ -36,12 +36,12 @@ class OcrMyPdf
         $txtFile = $this->tempFile();
         $pdfFile = $this->tempFile();
 
-        $command = "ocrmypdf $file {$pdfFile} --sidecar {$txtFile} --force-ocr 2>&1";
+        $command = "ocrmypdf {$file} {$pdfFile} --sidecar {$txtFile} --force-ocr 2>&1";
 
-        $string = exec($command, $result, $exitCode);
+        exec($command, $result, $exitCode);
 
         if ($exitCode !== 0) {
-            throw CommandException::executionFailed($result);
+            throw Exception::executionFailed($result);
         }
 
         $text = file_get_contents($txtFile);
