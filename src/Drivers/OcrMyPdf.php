@@ -2,17 +2,24 @@
 
 namespace LaravelEnso\Ocr\Drivers;
 
-use LaravelEnso\Ocr\Exceptions\CommandException;
+use LaravelEnso\Ocr\Exceptions\Command;
 
 class OcrMyPdf
 {
-    public function run($pdfPath)
+    private string $file;
+
+    public function __construct(string $file)
     {
-        return $this->checkExecutable()
-            ->execute($pdfPath);
+        $this->file = $file;
     }
 
-    private function checkExecutable()
+    public function handle(): string
+    {
+        return $this->checkExecutable()
+            ->execute();
+    }
+
+    private function checkExecutable(): self
     {
         if (file_exists('ocrmypdf')) {
             return $this;
@@ -25,23 +32,23 @@ class OcrMyPdf
         exec($command, $result, $exitCode);
 
         if ($exitCode !== 0) {
-            throw CommandException::notFound($result);
+            throw Command::notFound($result);
         }
 
         return $this;
     }
 
-    private function execute($file)
+    private function execute(): string
     {
         $txtFile = $this->tempFile();
         $pdfFile = $this->tempFile();
 
-        $command = "ocrmypdf $file {$pdfFile} --sidecar {$txtFile} --force-ocr 2>&1";
+        $command = "ocrmypdf {$this->file} {$pdfFile} --sidecar {$txtFile} --force-ocr 2>&1";
 
-        $string = exec($command, $result, $exitCode);
+        exec($command, $result, $exitCode);
 
         if ($exitCode !== 0) {
-            throw CommandException::executionFailed($result);
+            throw Command::executionFailed($result);
         }
 
         $text = file_get_contents($txtFile);

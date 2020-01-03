@@ -6,15 +6,15 @@ use LaravelEnso\Ocr\Drivers\OcrMyPdf;
 
 class Ocr
 {
-    private $file;
+    private string $file;
 
-    public function __construct($file)
+    public function __construct(string $file)
     {
         $this->file = $file;
     }
 
-    public function text()
+    public function text(): string
     {
-        return (new OcrMyPdf())->run($this->file);
+        return (new OcrMyPdf($this->file))->handle();
     }
 }
