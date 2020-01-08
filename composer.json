@@ -1,7 +1,6 @@
 {
 	"name": "laravel-enso/ocr",
 	"description": "A wrapper to work with ocrmypdf inside PHP.",
-	"version": "0.1.0",
 	"type": "library",
 	"keywords": [
 		"laravel-enso",
