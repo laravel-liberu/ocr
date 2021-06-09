@@ -6,11 +6,8 @@ use LaravelEnso\Ocr\Exceptions\Command;
 
 class OcrMyPdf
 {
-    private string $file;
-
-    public function __construct(string $file)
+    public function __construct(private string $file)
     {
-        $this->file = $file;
     }
 
     public function handle(): string
