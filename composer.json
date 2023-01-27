@@ -1,9 +1,9 @@
 {
-	"name": "laravel-enso/ocr",
+	"name": "cgdsoftware/ocr",
 	"description": "A wrapper to work with ocrmypdf inside PHP.",
 	"type": "library",
 	"keywords": [
-		"laravel-enso",
+		"cgdsoftware",
 		"ocrmypdf",
 		"OCR",
 		"text recognition",
@@ -14,13 +14,13 @@
 		{
 			"name": "Reza Fouladi",
 			"email": "raftx24@gmail.com",
-			"homepage": "https://laravel-enso.com",
+			"homepage": "https://cgdsoftware.com",
 			"role": "Developer"
 		},
 		{
 			"name": "Adrian Ocneanu",
 			"email": "aocneanu@gmail.com",
-			"homepage": "https://laravel-enso.com",
+			"homepage": "https://cgdsoftware.com",
 			"role": "Developer"
 		}
 	],
