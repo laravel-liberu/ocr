@@ -31,5 +31,8 @@
 		"psr-4": {
 			"LaravelEnso\\Ocr\\": "src/"
 		}
+	},
+	"require-dev": {
+		"rector/rector": "^0.17.0"
 	}
 }
