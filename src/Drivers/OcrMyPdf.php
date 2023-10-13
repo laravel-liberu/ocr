@@ -1,8 +1,8 @@
 <?php
 
-namespace LaravelEnso\Ocr\Drivers;
+namespace LaravelLiberu\Ocr\Drivers;
 
-use LaravelEnso\Ocr\Exceptions\Command;
+use LaravelLiberu\Ocr\Exceptions\Command;
 
 class OcrMyPdf
 {

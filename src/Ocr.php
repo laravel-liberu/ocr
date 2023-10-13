@@ -1,8 +1,8 @@
 <?php
 
-namespace LaravelEnso\Ocr;
+namespace LaravelLiberu\Ocr;
 
-use LaravelEnso\Ocr\Drivers\OcrMyPdf;
+use LaravelLiberu\Ocr\Drivers\OcrMyPdf;
 
 class Ocr
 {

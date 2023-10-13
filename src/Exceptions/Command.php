@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Ocr\Exceptions;
+namespace LaravelLiberu\Ocr\Exceptions;
 
 use Exception;
 
